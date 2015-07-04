@@ -1,0 +1,84 @@
+# Chapter 2 of Intro to Stat Learning with R
+# Applied problems
+# problem 8
+# 8a
+library(ISLR)
+attach(College)
+# 8b
+fix(College)
+#8ci
+summary(College)
+#8cii
+pairs(College[,1:10])
+#8ciii
+Private <- as.factor(Private)
+plot(Private, Outstate)
+#8civ
+Elite = rep("No", nrow(College))
+Elite [Top10perc > 50]= "Yes"
+Elite = as.factor(Elite)
+College = data.frame(College, Elite)
+summary(Elite)
+plot(Elite, Outstate)
+#8cv
+par(mfrow=c(2,2)) 
+hist(Grad.Rate,10)
+hist(Grad.Rate,5)
+hist(Grad.Rate,20)
+hist(Grad.Rate,15)
+#8vi
+#nada for now
+#
+#
+# 9
+# 9a
+attach(Auto)
+summary(Auto)
+?Auto
+# 9b
+range(mpg)
+range(displacement)
+range(horsepower)
+range(weight)
+range(acceleration)
+#9c
+paste(mean(mpg), sd(mpg))
+paste(mean(displacement), sd(displacement))
+paste(mean(horsepower), sd(horsepower))
+paste(mean(weight), sd(weight))
+paste(mean(acceleration), sd(acceleration))
+#9d
+# still thinking on this one
+#9e
+# later
+#9f
+pairs(Auto)
+cylinders <- as.factor(cylinders)
+plot(cylinders,mpg)
+#
+#
+#
+# 10
+# 10a
+library(MASS)
+Boston
+?Boston
+# 10b
+attach(Boston)
+summary(Boston)
+chas <- as.factor(chas)
+plot(chas, crim)
+summary(chas)
+pairs(Boston) #visual
+cor(Boston) #correlation matrix
+cor(Boston) > 0.5 # looking for strong positive correlations
+cor(Boston) < -0.5 # looking for strong negative correlations
+# 10c
+# 10d
+# 10e
+summary(chas)
+# 10f
+summary(ptratio)
+# 10g
+
+# 10h
